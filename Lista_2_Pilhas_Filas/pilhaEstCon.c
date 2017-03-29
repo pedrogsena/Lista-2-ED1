@@ -11,7 +11,7 @@
 
 /* Pilha estática contígua. */
 typedef struct pilhaec{
-  variavel elemento[TamMaxPEC];
+  tipo elemento[TamMaxPEC];
   int topo;
 } PilhaEstCon;
 
@@ -37,17 +37,16 @@ int PilhaEstConCheia(PilhaEstCon *ppilha){
 
 /* Informa elemento do topo da pilha, sem removê-lo. */
 tipo TopPilhaEstCon(PilhaEstCon *ppilha){
-  if(opcao) return ppilha->elemento[ppilha->topo].inteiro;
-  else return ppilha->elemento[ppilha->topo].caractere;
+  return ppilha->elemento[ppilha->topo];
 }
 
 /* Adiciona elemento ao topo da pilha;
     retorna 1 se bem-sucedido (pilha não está cheia),
     senão retorna 0. */
-int PushPilhaEstCon(PilhaEstCon *ppilha, variavel *pnovo){
+int PushPilhaEstCon(PilhaEstCon *ppilha, tipo novo){
   if(PilhaEstConCheia(ppilha)) return 0;
   (ppilha->topo)++;
-  atribuicao(&(ppilha->elemento[ppilha->topo]),pnovo,opcao);
+  ppilha->elemento[ppilha->topo]=tipo;
   return 1;
 }
 
