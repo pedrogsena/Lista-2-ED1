@@ -10,14 +10,14 @@
 
 /* Pilha dinâmica contígua. */
 typedef struct pilhadc{
-  variavel *elemento;
+  tipo *elemento;
   int topo;
   int capacidade;
 } PilhaDinCon;
 
 /* Cria e inicializa pilha vazia. */
 int CriaPilhaDinCon(PilhaDinCon *ppilha, int tamanho){
-  elemento=(variavel*)malloc(sizeof(variavel)*tamanho);
+  elemento=(tipo*)malloc(sizeof(tipo)*tamanho);
   if(elemento==NULL) return 0;
   ppilha->capacidade=tamanho;
   ppilha->topo=-1;
@@ -40,17 +40,16 @@ int PilhaDinConCheia(PilhaDinCon *ppilha){
 
 /* Informa elemento do topo da pilha, sem removê-lo. */
 tipo TopPilhaDinCon(PilhaDinCon *ppilha){
-  if(opcao) return ppilha->elemento[ppilha->topo].inteiro;
-  else return ppilha->elemento[ppilha->topo].caractere;
+  return ppilha->elemento[ppilha->topo];
 }
 
 /* Adiciona elemento ao topo da pilha;
     retorna 1 se bem-sucedido (pilha não está cheia),
     senão retorna 0. */
-int PushPilhaDinCon(PilhaDinCon *ppilha, variavel *pnovo){
+int PushPilhaDinCon(PilhaDinCon *ppilha, tipo novo){
   if(PilhaDinConCheia(ppilha)) return 0;
   (ppilha->topo)++;
-  atribuicao(&(ppilha->elemento[ppilha->topo]),pnovo,opcao);
+  ppilha->elemento[ppilha->topo]=novo;
   return 1;
 }
 

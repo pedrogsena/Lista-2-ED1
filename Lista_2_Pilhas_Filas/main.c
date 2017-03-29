@@ -7,12 +7,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "project_header.h"
-#define opcao 1
+#define opcao 0
 #if opcao
 #define tipo int
 #else
 #define tipo char
-#endif /* para operações com a union variavel - ver header. */
+#endif /* para alternar tipo entre int e char */
 
 int main(){
   return 0;

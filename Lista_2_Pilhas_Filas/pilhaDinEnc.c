@@ -39,20 +39,19 @@ int PilhaDinEncCheia(PilhaDinEnc *ppilha){
 
 /* Informa elemento do topo da pilha, sem removê-lo. */
 tipo TopPilhaDinEnc(PilhaDinEnc *ppilha){
-  if(opcao) return ppilha->topo->conteudo.inteiro;
-  else return ppilha->topo->conteudo.caractere;
+  return ppilha->topo->conteudo;
 }
 
 /* Adiciona elemento ao topo da pilha;
     retorna 1 se bem-sucedido (pilha não está cheia),
     senão retorna 0. */
-int PushPilhaDinEnc(PilhaDinEnc *ppilha, variavel *pnovo){
+int PushPilhaDinEnc(PilhaDinEnc *ppilha, tipo novo){
   nodo *aux;
   if(PilhaDinEncCheia(ppilha)) return 0;
   aux=(nodo*)malloc(sizeof(nodo));
   aux->proximo=ppilha->topo;
   ppilha->topo=aux;
-  atribuicao(&(ppilha->topo->conteudo),pnovo,opcao);
+  ppilha->topo->conteudo=novo;
   return 1;
 }
 
