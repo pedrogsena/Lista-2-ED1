@@ -14,7 +14,7 @@ typedef struct pilhade{
 } PilhaDinEnc;
 
 /* Cria (melhor, inicializa) pilha vazia. */
-int CriaPilhaDinEnc(PilhaDinEnc *ppilha){
+void CriaPilhaDinEnc(PilhaDinEnc *ppilha){
   ppilha->topo=NULL;
 }
 
@@ -37,7 +37,8 @@ int PilhaDinEncCheia(PilhaDinEnc *ppilha){
   return saida;
 }
 
-/* Informa elemento do topo da pilha, sem removê-lo. */
+/* Informa elemento do topo da pilha, sem removê-lo.
+    Não use em pilhas vazias. */
 tipo TopPilhaDinEnc(PilhaDinEnc *ppilha){
   return ppilha->topo->conteudo;
 }
