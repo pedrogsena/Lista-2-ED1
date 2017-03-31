@@ -12,14 +12,14 @@
 typedef struct pilhadc{
   tipo *elemento;
   int topo;
-  int capacidade;
+  int tamanho;
 } PilhaDinCon;
 
 /* Cria e inicializa pilha vazia. */
-int CriaPilhaDinCon(PilhaDinCon *ppilha, int tamanho){
-  elemento=(tipo*)malloc(sizeof(tipo)*tamanho);
-  if(elemento==NULL) return 0;
-  ppilha->capacidade=tamanho;
+int CriaPilhaDinCon(PilhaDinCon *ppilha, int capacidade){
+  ppilha->elemento=(tipo*)malloc(sizeof(tipo)*capacidade);
+  if(ppiha->elemento==NULL) return 0;
+  ppilha->tamanho=capacidade;
   ppilha->topo=-1;
   return 1;
 }
@@ -34,11 +34,12 @@ int PilhaDinConVazia(PilhaDinCon *ppilha){
 /* Checa se a pilha está cheia (e retorna 1)
     ou não (e retorna 0). */
 int PilhaDinConCheia(PilhaDinCon *ppilha){
-  if(ppilha->topo==ppilha->capacidade-1) return 1;
+  if(ppilha->topo==ppilha->tamanho-1) return 1;
   return 0;
 }
 
-/* Informa elemento do topo da pilha, sem removê-lo. */
+/* Informa elemento do topo da pilha, sem removê-lo.
+    Não use em pilhas vazias. */
 tipo TopPilhaDinCon(PilhaDinCon *ppilha){
   return ppilha->elemento[ppilha->topo];
 }

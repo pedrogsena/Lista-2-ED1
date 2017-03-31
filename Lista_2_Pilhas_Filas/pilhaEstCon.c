@@ -35,7 +35,8 @@ int PilhaEstConCheia(PilhaEstCon *ppilha){
   return 0;
 }
 
-/* Informa elemento do topo da pilha, sem removê-lo. */
+/* Informa elemento do topo da pilha, sem removê-lo.
+    Não use em pilhas vazias. */
 tipo TopPilhaEstCon(PilhaEstCon *ppilha){
   return ppilha->elemento[ppilha->topo];
 }
@@ -46,7 +47,7 @@ tipo TopPilhaEstCon(PilhaEstCon *ppilha){
 int PushPilhaEstCon(PilhaEstCon *ppilha, tipo novo){
   if(PilhaEstConCheia(ppilha)) return 0;
   (ppilha->topo)++;
-  ppilha->elemento[ppilha->topo]=tipo;
+  ppilha->elemento[ppilha->topo]=novo;
   return 1;
 }
 

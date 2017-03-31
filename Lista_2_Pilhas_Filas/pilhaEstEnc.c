@@ -44,7 +44,8 @@ int PilhaEstEncCheia(PilhaEstEnc *ppilha){
   return 0;
 }
 
-/* Informa elemento do topo da pilha, sem removê-lo. */
+/* Informa elemento do topo da pilha, sem removê-lo.
+    Não use em pilhas vazias. */
 tipo TopPilhaEstEnc(PilhaEstEnc *ppilha){
   return ppilha->topo->conteudo;
 }
