@@ -7,13 +7,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "project_header.h"
-#define TamMaxPEE 10
-
-/* Pilha estática encadeada. */
-typedef struct pilhaee{
-  nodo elemento[TamMaxPEE];
-  nodo *topo;
-} PilhaEstEnc;
 
 /* Cria e inicializa pilha vazia. */
 void CriaPilhaEstEnc(PilhaEstEnc *ppilha){
@@ -63,7 +56,7 @@ int PushPilhaEstEnc(PilhaEstEnc *ppilha, tipo novo){
     return 1;
   }
   for(indice=1;(continua_loop)&&(indice<TamMaxPEE);indice++){
-    if(ppilha->elemento[indice].proximo=NULL) continua_loop=0;
+    if(ppilha->elemento[indice].proximo==NULL) continua_loop=0;
   }
   ppilha->elemento[indice].conteudo=novo;
   ppilha->elemento[indice].proximo=ppilha->topo;

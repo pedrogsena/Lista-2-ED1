@@ -8,17 +8,10 @@
 #include <stdlib.h>
 #include "project_header.h"
 
-/* Pilha dinâmica contígua. */
-typedef struct pilhadc{
-  tipo *elemento;
-  int topo;
-  int tamanho;
-} PilhaDinCon;
-
 /* Cria e inicializa pilha vazia. */
 int CriaPilhaDinCon(PilhaDinCon *ppilha, int capacidade){
   ppilha->elemento=(tipo*)malloc(sizeof(tipo)*capacidade);
-  if(ppiha->elemento==NULL) return 0;
+  if(ppilha->elemento==NULL) return 0;
   ppilha->tamanho=capacidade;
   ppilha->topo=-1;
   return 1;

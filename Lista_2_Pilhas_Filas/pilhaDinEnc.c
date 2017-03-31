@@ -8,11 +8,6 @@
 #include <stdlib.h>
 #include "project_header.h"
 
-/* Pilha dinâmica encadeada. */
-typedef struct pilhade{
-  nodo *topo;
-} PilhaDinEnc;
-
 /* Cria (melhor, inicializa) pilha vazia. */
 void CriaPilhaDinEnc(PilhaDinEnc *ppilha){
   ppilha->topo=NULL;

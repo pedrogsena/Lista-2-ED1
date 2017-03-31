@@ -7,13 +7,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "project_header.h"
-#define TamMaxPEC 10
-
-/* Pilha estática contígua. */
-typedef struct pilhaec{
-  tipo elemento[TamMaxPEC];
-  int topo;
-} PilhaEstCon;
 
 /* Cria (melhor, inicializa) pilha vazia. */
 void CriaPilhaEstCon(PilhaEstCon *ppilha){

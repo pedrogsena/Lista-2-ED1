@@ -7,14 +7,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "project_header.h"
-#define TamMaxFEE 10
-
-/* Fila estática encadeada. */
-typedef struct filaee{
-  nodo elemento[TamMaxFEC];
-  nodo *inicio;
-  nodo *fim;
-} FilaEstEnc;
 
 /* Cria (melhor, inicializa) fila vazia. */
 void CriaFilaEstEnc(FilaEstEnc *pfila){
