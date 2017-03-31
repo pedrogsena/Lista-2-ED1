@@ -8,14 +8,6 @@
 #include <stdlib.h>
 #include "project_header.h"
 
-/* Fila dinâmica contígua (circular). */
-typedef struct filadc{
-  tipo *elemento;
-  int tamanho;
-  int inicio;
-  int fim;
-} FilaDinCon;
-
 /* Cria (melhor, inicializa) fila vazia. */
 int CriaFilaDinCon(FilaDinCon *pfila, int capacidade){
   pfila->elemento=(tipo*)malloc(sizeof(tipo)*capacidade);

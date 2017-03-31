@@ -7,14 +7,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "project_header.h"
-#define TamMaxFEC 10
-
-/* Fila estática contígua (circular). */
-typedef struct filaec{
-  tipo elemento[TamMaxFEC];
-  int inicio;
-  int fim;
-} FilaEstCon;
 
 /* Cria (melhor, inicializa) fila vazia. */
 void CriaFilaEstCon(FilaEstCon *pfila){

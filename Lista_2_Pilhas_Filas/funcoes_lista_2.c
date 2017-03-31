@@ -45,14 +45,15 @@ int buscasub(char *string){
           }
           vazio=PopPilhaDinEnc(&novapilha);
           outrotermochar=TopPilhaDinEnc(&novapilha);
-          if(termochar=='0')
+          if(termochar=='0'){
             if(outrotermochar=='1'||outrotermochar=='2') controle=0;
+          }
           else{
-            if(termochar=='1')
+            if(termochar=='1'){
               if(outrotermochar=='2') controle=0;
+            }
           }
         }
-        free(&novapilha);
         CriaPilhaDinEnc(&novapilha);
         if(controle&&contador0>0&&contador1>0&&contador2==contador0) contadorsubs++;
       }

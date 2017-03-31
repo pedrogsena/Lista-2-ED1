@@ -8,12 +8,6 @@
 #include <stdlib.h>
 #include "project_header.h"
 
-/* Fila dinâmica encadeada. */
-typedef struct filade{
-  nodo *inicio;
-  nodo *fim;
-} FilaDinEnc;
-
 /* Cria (melhor, inicializa) fila vazia. */
 void CriaFilaDinEnc(FilaDinEnc *pfila){
   pfila->inicio=NULL;
@@ -32,7 +26,7 @@ int FilaDinEncVazia(FilaDinEnc *pfila){
 int FilaDinEncCheia(FilaDinEnc *pfila){
   nodo *aux;
   int saida;
-  aux=(nodo*)malloc(size(nodo));
+  aux=(nodo*)malloc(sizeof(nodo));
   if(aux==NULL) saida=1;
   else saida=0;
   free(aux);
